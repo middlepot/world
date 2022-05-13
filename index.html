@@ -1,0 +1,495 @@
+<html>
+
+<!--
+
+　　　          ___   .--.
+　　　    .--.-"   "-' .- |
+　　　   / .-,`          .'   
+　　　   \   `           \ 　　　　　　。・゜ 　♡   。　　・　゜ 　　　♡  
+　　　    '.            ・ \　　　　　　　　　　　　　　　　　　　　　　　　♡　　　　♡ ゜・。。♡  
+　　　      |  ・     ᴥ    。|　　　　・゜♡ ゜・。　　. * ・ ♡ °  . 。
+　　　      \ 。            /.____　　　　　　　　　　　　　　　　　　♡.  
+　　　     /`-.          ,'.'    `\　　　　　　　　　　　　　　　　　　。・゜　　　 ♡ ・ 。　　。・゜ ♡  
+　　　  __/   \`-.____.-' `\      /　　　　　♡　。・゜      
+　　　  | `---`'-'._/-`     \----'    _ 　　　　　　　　　　　♡　　　.　　　.♡ 
+　　　  |,-'`  /             |    _.-' `\　　　　. * ・        
+　　　 .'     /              |--'`     / |　　　　　　　　　　 ♡
+　　　/      /\              `         | |
+　　　|   .\/  \      .--. __          \ |　　　　　　　　　　　*.。middlepot.com 
+　　　 '-'      '._       /  `\         /　　　　　　　　　　　　　　　　　　　　　　　ଘ(*´ ˘ `*)ഒ 。.*
+　　　             `\    '     |------'`
+　　　               \  |      |
+　　　                \        /
+ 　　　                '._  _.'
+
+-->
+
+<title>.. 𝖽𝗂𝗋𝖾𝖼𝗍𝗈𝗋𝗒</title>
+
+<meta name="title" content="⇆">
+<meta name="description" content=".. 𝖽𝗂𝗋𝖾𝖼𝗍𝗈𝗋𝗒">
+<meta name="theme-color" content="#f7e9ed">
+<meta property="og:url" content="https://dream.pooftie.me">
+<meta property="og:title" content="⇆">
+<meta property="og:description" content=".. 𝖽𝗂𝗋𝖾𝖼𝗍𝗈𝗋𝗒">
+<meta property="og:image" content="https://middlepot.com/img/dream.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:type" content="website">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://dream.pooftie.me">
+<meta property="twitter:title" content="⇆">
+<meta property="twitter:description" content=".. 𝖽𝗂𝗋𝖾𝖼𝗍𝗈𝗋𝗒">
+<meta property="twitter:image" content="https://middlepot.com/img/dream.jpg">
+
+<script language= "JavaScript">
+location.href="https://dream.pooftie.me"
+</script>
+
+<head>
+<link rel="shortcut icon" href="https://i.imgur.com/54tny9l.png">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<style>
+body{ 
+  cursor: url(https://i.imgur.com/A5hKsxg.png), progress;}
+a:hover {cursor: url(https://i.imgur.com/Pt0nH2m.png), progress;
+  
+  }
+ ::selection {text-shadow: 0 0 8px #fff;color:#fff}
+ ::-moz-selection {text-shadow: 0 0 8px #fff;color:#fff}
+}
+</style>
+<style type="text/css">
+::-webkit-scrollbar {
+width: 4px;
+height: 4px;
+background: #fcf7f7;
+}
+::-webkit-scrollbar-thumb {
+background-color: #f2e6e6;
+-webkit-border-radius: 0ex;
+border: 1px solid #d1bebe;
+}
+</style>
+<style>
+#stuff {
+position: absolute;
+	left: 230px;
+	top: 30px;
+	z-index:15;
+}
+</style>
+
+<script type="text/javascript">
+// <![CDATA[
+var colour="#fff";
+var speed=65;
+var blobs=10;
+var charc="♡";
+var div;
+var xpos=new Array();
+var ypos=new Array();
+var zpos=new Array();
+var dx=new Array();
+var dy=new Array();
+var dz=new Array();
+var blob=new Array(); 
+var swide=800;
+var shigh=600;
+var ie_version=(navigator.appVersion.indexOf("MSIE")!=-1)?parseFloat(navigator.appVersion.split("MSIE")[1]):false;
+
+
+function addLoadEvent(funky) {
+  var oldonload=window.onload;
+  if (typeof(oldonload)!='function') window.onload=funky;
+  else window.onload=function() {
+    if (oldonload) oldonload();
+    funky();
+  }
+}
+
+addLoadEvent(fill_the_jar);
+
+function fill_the_jar() {
+	var i, dvs;
+	div=document.createElement('div');
+	dvs=div.style;
+	dvs.position='fixed';
+	dvs.left='0px';
+	dvs.top='0px';
+	dvs.width='1px';
+	dvs.height='1px';
+	document.body.appendChild(div);
+	set_width();
+	for (i=0; i<blobs; i++) {
+	  add_blob(i);
+	  jamjar(i);
+	}
+}
+
+function add_blob(ref) {
+	var dv, sy;
+	dv=document.createElement('div');
+	sy=dv.style;
+	sy.position='absolute';
+	sy.textAlign='center';
+    if (ie_version && ie_version<10) {
+	  sy.fontSize="10px";
+	  sy.width="100px";
+	  sy.height="100px";
+	  sy.paddingTop="40px";
+	  sy.color=colour;
+      dv.appendChild(document.createTextNode(charc));
+	}
+	else if (ie_version) {
+	  sy.fontSize="1px";
+	  sy.width="0px";
+	  sy.height="0px";
+	}
+	else {
+	  dv.appendChild(document.createTextNode(charc));
+	  sy.color='rgba(0,0,0,0)';
+	}
+ 	ypos[ref]=Math.floor(shigh*Math.random());
+	dy[ref]=(0.5+Math.random())*(Math.random()>.5?2:-2);
+	xpos[ref]=Math.floor(swide*Math.random());
+	dx[ref]=(0.5+Math.random())*(Math.random()>.5?2:-2);
+	zpos[ref]=Math.random()*20;
+	dz[ref]=(0.5+Math.random())*(Math.random()>.5?.5:-.5);
+	blob[ref]=dv;
+	div.appendChild(blob[ref]);
+	set_blob(ref);
+}
+
+function rejig(ref, xy) {
+  if (xy=='y') {
+	dx[ref]=(0.5+Math.random())*sign(dx[ref]);
+    dy[ref]=(0.5+Math.random())*-sign(dy[ref]);
+  }
+  else {
+    dx[ref]=(0.5+Math.random())*-sign(dx[ref]);
+  	dy[ref]=(0.5+Math.random())*sign(dy[ref]);
+  }
+}
+
+function sign(a) {
+  if (a<0) return (-2);
+  else if (a>0) return (2);
+  else return (0);
+}
+
+function set_blob(ref) {
+	var sy;
+	sy=blob[ref].style;
+	sy.top=ypos[ref]+'px';
+	sy.left=xpos[ref]+'px';
+    if (ie_version && ie_version<10) {
+	  sy.filter="glow(color="+colour+",strength="+zpos[ref]+")";
+	  sy.fontSize=30-zpos[ref]+"px";
+	}
+	else if (ie_version) {
+	  sy.boxShadow="0px 0px 40px "+zpos[ref]+"px "+colour;
+	}
+	else {
+	  sy.textShadow=colour+' 0px 0px '+zpos[ref]+'px';
+	  sy.fontSize=40+zpos[ref]+'px';
+	}
+}
+
+function jamjar(ref) {
+	if (ypos[ref]+dy[ref]<-50 || ypos[ref]+dy[ref]>shigh) rejig(ref, 'y');
+	ypos[ref]+=dy[ref];
+	if (xpos[ref]+dx[ref]<-50 || xpos[ref]+dx[ref]>swide) rejig(ref, 'x');
+	xpos[ref]+=dx[ref];
+	if (zpos[ref]+dz[ref]<0 || zpos[ref]+dz[ref]>20) dz[ref]=-dz[ref];
+	zpos[ref]+=dz[ref];
+	set_blob(ref);
+	setTimeout("jamjar("+ref+")", speed);
+}
+
+window.onresize=set_width;
+function set_width() {
+  var sw_min=999999;
+  var sh_min=999999;
+  if (document.documentElement && document.documentElement.clientWidth) {
+    if (document.documentElement.clientWidth>0) sw_min=document.documentElement.clientWidth;
+    if (document.documentElement.clientHeight>0) sh_min=document.documentElement.clientHeight;
+  }
+  if (typeof(self.innerWidth)!="undefined" && self.innerWidth) {
+    if (self.innerWidth>0 && self.innerWidth<sw_min) sw_min=self.innerWidth;
+    if (self.innerHeight>0 && self.innerHeight<sh_min) sh_min=self.innerHeight;
+  }
+  if (document.body.clientWidth) {
+    if (document.body.clientWidth>0 && document.body.clientWidth<sw_min) sw_min=document.body.clientWidth;
+    if (document.body.clientHeight>0 && document.body.clientHeight<sh_min) sh_min=document.body.clientHeight;
+  }
+  if (sw_min==999999 || sh_min==999999) {
+    sw_min=800;
+    sh_min=600;
+  }
+  swide=sw_min;
+  shigh=sh_min;
+}
+// ]]>
+</script>
+
+</head>
+
+<style>
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+@media screen and (max-width: 1000px) and (orientation: portrait){
+#everything { position: absolute; zoom: 140%;
+	left:630px;
+	top:-100px;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg); }
+#stuff { overflow-y:hidden; overflow-x:hidden; }
+}
+@media screen and (min-width: 1700px) and (orientation: landscape){
+#everything { position: absolute; zoom: 120%;
+	left:120px;
+	top:40px; }
+#stuff { overflow-y:hidden; overflow-x:hidden; }
+}
+@media screen and (min-width: 2000px) and (orientation: landscape){
+#everything { position: absolute; zoom: 100%;}
+#stuff { overflow-y:hidden; overflow-x:hidden; }
+}
+@media screen and (min-width: 3000px) and (orientation: landscape){
+#everything { position: absolute; zoom: 240%;
+	left:120px;
+	top:40px; }
+#stuff { overflow-y:hidden; overflow-x:hidden; }
+}
+@media screen and (max-width: 1000px) and (orientation: landscape){
+#everything { position: absolute; zoom: 80%; left:-60px; top:10px;}
+#stuff { overflow-y:hidden; overflow-x:hidden; }
+}
+</style>
+
+<div id="everything">
+
+<body style="background-image:url(https://i.imgur.com/oivxSTB.png); background-size: cover; background-repeat: no-repeat; background-color:#fefbfb; font-family: Calibri; font-size: 12px;">
+<body onkeydown="return false" oncontextmenu="return false" ondragstart="return false" onMouseOver="window.status='..message perso .. '; return true;" style="overflow-y:hidden; overflow-x:hidden;">
+
+
+<br><br>
+<div id="stuff" class="fade-in2">
+<audio id="musict" preload="true" autoplay loop>
+  <source src="https://file.pooftie.me/a/hideout.mp3" type="audio/mpeg">
+</audio>
+<div id="audioplayer">
+<button id="pButton" class="play"></button>
+  <div id="timeline">    
+      <div id="playhead"></div>
+  </div>
+</div>
+
+
+
+<style>
+#pButton{
+    height:92px; 
+    width: 60px;
+    border: none;
+    background-repeat: no-repeat;
+    outline:none;
+    cursor: url(https://i.imgur.com/Pt0nH2m.png), progress;
+}
+
+.play{background: url('https://i.imgur.com/vhqu0yz.png');}
+.pause{background: url('https://i.imgur.com/vhqu0yz.png') ;}
+</style>
+
+
+
+
+
+
+<script>
+var music = document.getElementById('musict');
+var duration = music.duration;
+var pButton = document.getElementById('pButton');
+var playhead = document.getElementById('playhead');
+var timeline = document.getElementById('timeline');
+
+var timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
+
+pButton.addEventListener("click", play);
+
+music.addEventListener("timeupdate", timeUpdate, false);
+
+timeline.addEventListener("click", function(event) {
+    moveplayhead(event);
+    music.currentTime = duration * clickPercent(event);
+}, false);
+
+function clickPercent(event) {
+    return (event.clientX - getPosition(timeline)) / timelineWidth;
+}
+
+playhead.addEventListener('mousedown', mouseDown, false);
+window.addEventListener('mouseup', mouseUp, false);
+
+
+var onplayhead = false;
+
+function mouseDown() {
+    onplayhead = true;
+    window.addEventListener('mousemove', moveplayhead, true);
+    music.removeEventListener('timeupdate', timeUpdate, false);
+}
+
+function mouseUp(event) {
+    if (onplayhead == true) {
+        moveplayhead(event);
+        window.removeEventListener('mousemove', moveplayhead, true);
+        music.currentTime = duration * clickPercent(event);
+        music.addEventListener('timeupdate', timeUpdate, false);
+    }
+    onplayhead = false;
+}
+function moveplayhead(event) {
+    var newMargLeft = event.clientX - getPosition(timeline);
+
+    if (newMargLeft >= 0 && newMargLeft <= timelineWidth) {
+        playhead.style.marginLeft = newMargLeft + "px";
+    }
+    if (newMargLeft < 0) {
+        playhead.style.marginLeft = "0px";
+    }
+    if (newMargLeft > timelineWidth) {
+        playhead.style.marginLeft = timelineWidth + "px";
+    }
+}
+
+function timeUpdate() {
+    var playPercent = timelineWidth * (music.currentTime / duration);
+    playhead.style.marginLeft = playPercent + "px";
+    if (music.currentTime == duration) {
+        pButton.className = "";
+        pButton.className = "play";
+    }
+}
+
+function play() {
+    if (music.paused) {
+        music.play();
+        pButton.className = "";
+        pButton.className = "pause";
+    } else { 
+        music.pause();
+        pButton.className = "";
+        pButton.className = "play";
+    }
+}
+
+music.addEventListener("canplaythrough", function() {
+    duration = music.duration;
+}, false);
+
+function getPosition(el) {
+    return el.getBoundingClientRect().left;
+}
+</script>
+</div>
+
+<br><br><br><br><br>
+<style>
+.fade-in1 {
+animation: fadeIn ease 3s;
+-webkit-animation: fadeIn ease 3s;
+-moz-animation: fadeIn ease 3s;
+-o-animation: fadeIn ease 3s;
+-ms-animation: fadeIn ease 3s;
+}
+.fade-in2 {
+animation: fadeIn ease 7s;
+-webkit-animation: fadeIn ease 7s;
+-moz-animation: fadeIn ease 7s;
+-o-animation: fadeIn ease 7s;
+-ms-animation: fadeIn ease 7s;
+}
+@keyframes fadeIn {
+0% {opacity:0; filter: blur(3px); -webkit-filter: blur(3px);}
+100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+0% {opacity:0; filter: blur(3px); -webkit-filter: blur(3px);}
+100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+0% {opacity:0; filter: blur(3px); -webkit-filter: blur(3px);}
+100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+0% {opacity:0; filter: blur(3px); -webkit-filter: blur(3px);}
+100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+0% {opacity:0; filter: blur(3px); -webkit-filter: blur(3px);}
+100% {opacity:1;}
+}
+.door:hover{box-shadow: 0px 0px 80px 0px #fff; background-color: rgb(255, 255, 255, 0.5);}
+a{  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;}
+a:hover{text-shadow: 0 0 8px #fff;color:#fff}
+</style>
+
+<img class="fade-in1" style="z-index:5; position:absolute; left:240px; top:20px;" width="800px" height="auto" src="https://i.imgur.com/dePUSOx.png">
+<img class="fade-in2" style="z-index:10; position:absolute; left:230px; top:310px;" width="200px" height="auto" src="https://i.imgur.com/gQWoGCl.png">
+<img class="fade-in2" style="z-index:8; position:absolute; left:130px; top:390px;" src="https://i.imgur.com/uqRIGCw.png">
+<a href="/dream"><img class="fade-in2 door" style="  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s; z-index:11; position:absolute; left:990px; top:160px;" width="200px" height="auto" src="https://i.imgur.com/uxMMaMd.png"></a>
+<div class="fade-in1" style="z-index:12; position:absolute; top:570px; left:610px; white-space: nowrap;">
+<a href="https://middlepot.com" target="_blank"><sup><font color="#fff">© middlepot</font></sup></a>
+</div>
+
+</div>
+
+<br><br><br>
+
+
+</body>
+</body>
+
+<!--
+
+　　　          ___   .--.
+　　　    .--.-"   "-' .- |
+　　　   / .-,`          .'   
+　　　   \   `           \ 　　　　　　。・゜ 　♡   。　　・　゜ 　　　♡  
+　　　    '.            ・ \　　　　　　　　　　　　　　　　　　　　　　　　♡　　　　♡ ゜・。。♡  
+　　　      |  ・     ᴥ    。|　　　　・゜♡ ゜・。　　. * ・ ♡ °  . 。
+　　　      \ 。            /.____　　　　　　　　　　　　　　　　　　♡.  
+　　　     /`-.          ,'.'    `\　　　　　　　　　　　　　　　　　　。・゜　　　 ♡ ・ 。　　。・゜ ♡  
+　　　  __/   \`-.____.-' `\      /　　　　　♡　。・゜      
+　　　  | `---`'-'._/-`     \----'    _ 　　　　　　　　　　　♡　　　.　　　.♡ 
+　　　  |,-'`  /             |    _.-' `\　　　　. * ・        
+　　　 .'     /              |--'`     / |　　　　　　　　　　 ♡
+　　　/      /\              `         | |
+　　　|   .\/  \      .--. __          \ |　　　　　　　　　　　*.。middlepot.com 
+　　　 '-'      '._       /  `\         /　　　　　　　　　　　　　　　　　　　　　　　ଘ(*´ ˘ `*)ഒ 。.*
+　　　             `\    '     |------'`
+　　　               \  |      |
+　　　                \        /
+ 　　　                '._  _.'
+
+-->
+
+</html>
